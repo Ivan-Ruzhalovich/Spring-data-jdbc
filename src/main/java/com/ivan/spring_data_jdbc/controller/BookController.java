@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class BookController {
 
-    private final BookServiceImpl service;
+    BookServiceImpl service;
 
     public BookController(BookServiceImpl bookService){
         this.service = bookService;
@@ -37,4 +37,6 @@ public class BookController {
         service.deleteBook(id);
         return new ResponseEntity<>("Книга удалена!",HttpStatus.OK);
     }
+
+//    создание, чтение, обновление, удаление
 }
