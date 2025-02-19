@@ -16,7 +16,7 @@ public class BookRepositoryImpl implements BookRepository{
     private static final String updateInfoAboutBook = "UPDATE book SET title = ?, author = ?, publicationYear = ? WHERE id = ?";
     private static final String deleteBookById = "DELETE FROM book WHERE id = ?";
 
-    JdbcTemplate template;
+    private final JdbcTemplate template;
     public BookRepositoryImpl(JdbcTemplate jdbcTemplate){
         this.template = jdbcTemplate;
     }
@@ -25,7 +25,6 @@ public class BookRepositoryImpl implements BookRepository{
         template.update(insertBook,book.getTitle(),book.getAuthor()
                 ,book.getPublicationYear());
     }
-
 
     @Override
     public Book getBook(Long id) {

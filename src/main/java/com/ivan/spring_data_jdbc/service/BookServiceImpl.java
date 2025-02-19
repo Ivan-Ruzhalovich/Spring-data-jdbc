@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class BookServiceImpl implements BookService{
 
-    BookRepositoryImpl bookRepository;
+    private final BookRepositoryImpl bookRepository;
 
     public BookServiceImpl(BookRepositoryImpl bookRepository){
         this.bookRepository = bookRepository;

@@ -21,6 +21,12 @@ public class Book {
     private String author;
     private Integer publicationYear;
 
+    public Book(String title,String author,Integer publicationYear ) {
+        this.publicationYear = publicationYear;
+        this.author = author;
+        this.title = title;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
